@@ -6,11 +6,11 @@
 /*   By: juamanri <juamanri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 12:36:28 by juamanri          #+#    #+#             */
-/*   Updated: 2025/04/08 12:40:20 by juamanri         ###   ########.fr       */
+/*   Updated: 2025/04/10 11:51:37 by juamanri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

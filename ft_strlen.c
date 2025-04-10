@@ -6,11 +6,11 @@
 /*   By: juamanri <juamanri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 12:51:58 by juamanri          #+#    #+#             */
-/*   Updated: 2025/04/09 13:38:41 by juamanri         ###   ########.fr       */
+/*   Updated: 2025/04/10 11:52:52 by juamanri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *string)
 {

@@ -6,7 +6,7 @@
 /*   By: juamanri <juamanri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 10:40:10 by juamanri          #+#    #+#             */
-/*   Updated: 2025/04/09 13:39:00 by juamanri         ###   ########.fr       */
+/*   Updated: 2025/04/10 11:54:54 by juamanri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strchr(const char *s, int c)
 	while (s[i] && s[i] != c)
 	{
 		if (s[i] == c)
-			ubication = &s[i];
+			ubication = (char *)&s[i];
 		i++;
 	}
 	return (ubication);
