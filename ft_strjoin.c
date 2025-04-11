@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juamanri <juamanri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 13:53:02 by juamanri          #+#    #+#             */
-/*   Updated: 2025/04/11 15:46:00 by juamanri         ###   ########.fr       */
+/*   Created: 2025/04/11 13:29:20 by juamanri          #+#    #+#             */
+/*   Updated: 2025/04/11 14:15:16 by juamanri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
-	int	num;
-	int	sign;
+	int		i;
+	int		s1_len;
+	int		s2_len;
+	char	*str;
 
 	i = 0;
-	num = 0;
-	sign = 1;
-	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
-	{
-		if (nptr[i] == '-')
-			sign = -sign;
-		i++;
-	}
-	if (nptr[i] < '0' || nptr[i] > '9')
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	str = (char *)malloc((s1_len + s2_len) + 1);
+	if (!str)
 		return (0);
-	while (ft_isdigit(nptr[i]))
+	while (i < s1_len)
 	{
-		num = (num * 10) + (nptr[i] - '0');
+		str[i] = s1[i];
 		i++;
 	}
-	return (num * sign);
+	while (i < (s1_len + s2_len))
+	{
+		str[i] = s2[i - s1_len];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }

@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juamanri <juamanri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 13:53:02 by juamanri          #+#    #+#             */
-/*   Updated: 2025/04/11 15:46:00 by juamanri         ###   ########.fr       */
+/*   Created: 2025/04/11 15:50:45 by juamanri          #+#    #+#             */
+/*   Updated: 2025/04/11 16:25:40 by juamanri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
 
-int	ft_atoi(const char *nptr)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
-	int	num;
-	int	sign;
+	size_t	i;
+	char	*arr1;
+	char	*arr2;
 
 	i = 0;
-	num = 0;
-	sign = 1;
-	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
+	arr1 = (char *)s1;
+	arr2 = (char *)s2;
+	while ((arr1[i] == arr2[i]) && (i < n))
 		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
-	{
-		if (nptr[i] == '-')
-			sign = -sign;
-		i++;
-	}
-	if (nptr[i] < '0' || nptr[i] > '9')
+	if (i == n)
 		return (0);
-	while (ft_isdigit(nptr[i]))
-	{
-		num = (num * 10) + (nptr[i] - '0');
-		i++;
-	}
-	return (num * sign);
+	return ((unsigned char)arr1[i] - (unsigned char)arr2[i]);
+}
+
+int	main(void)
+{
+	printf("%d", ft_memcmp("abc", "abc", 7));
+	return (0);
 }

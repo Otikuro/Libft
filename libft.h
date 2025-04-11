@@ -6,13 +6,14 @@
 /*   By: juamanri <juamanri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 10:52:49 by juamanri          #+#    #+#             */
-/*   Updated: 2025/04/10 10:57:51 by juamanri         ###   ########.fr       */
+/*   Updated: 2025/04/11 15:44:37 by juamanri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# include <unistd.h>
 
 int		ft_atoi(const char *nptr);
 int		ft_isalnum(int c);

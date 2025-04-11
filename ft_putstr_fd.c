@@ -1,40 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juamanri <juamanri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 13:53:02 by juamanri          #+#    #+#             */
-/*   Updated: 2025/04/11 15:46:00 by juamanri         ###   ########.fr       */
+/*   Created: 2025/04/10 14:00:10 by juamanri          #+#    #+#             */
+/*   Updated: 2025/04/10 14:02:25 by juamanri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
-	int	num;
-	int	sign;
-
-	i = 0;
-	num = 0;
-	sign = 1;
-	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
-	{
-		if (nptr[i] == '-')
-			sign = -sign;
-		i++;
-	}
-	if (nptr[i] < '0' || nptr[i] > '9')
-		return (0);
-	while (ft_isdigit(nptr[i]))
-	{
-		num = (num * 10) + (nptr[i] - '0');
-		i++;
-	}
-	return (num * sign);
+	write(fd, s, ft_strlen(s));
 }
