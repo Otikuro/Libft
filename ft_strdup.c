@@ -6,7 +6,7 @@
 /*   By: juamanri <juamanri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 13:30:17 by juamanri          #+#    #+#             */
-/*   Updated: 2025/04/10 11:52:36 by juamanri         ###   ########.fr       */
+/*   Updated: 2025/04/14 12:38:07 by juamanri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_strdup(char *s)
 	char	*copy;
 
 	i = 0;
-	if (!s)
-		return (NULL);
 	copy = (char *)malloc(ft_strlen(s) + 1);
 	if (!copy)
 		return (NULL);

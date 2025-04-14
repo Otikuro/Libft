@@ -6,7 +6,7 @@
 /*   By: juamanri <juamanri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 15:13:54 by juamanri          #+#    #+#             */
-/*   Updated: 2025/04/12 16:51:08 by juamanri         ###   ########.fr       */
+/*   Updated: 2025/04/14 12:48:56 by juamanri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void	ft_fill_array(char const *s, char c, int num_of_words, char **arr)
 		arr[current_word][j] = '\0';
 		current_word++;
 	}
+	arr[current_word] = 0;
 }
 
 char	**ft_split(char const *s, char c)
@@ -93,12 +94,12 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	num_of_words = ft_get_num_of_words(s, c);
-	arr = (char **)malloc(sizeof(char *) * num_of_words);
+	arr = (char **)malloc(sizeof(char *) * (num_of_words + 1));
 	if (!arr)
 		return (0);
 	while (i < num_of_words)
 	{
-		arr[i] = (char *)malloc(sizeof(char) * (ft_get_word_len(s, c, 1) + 1));
+		arr[i] = (char *)malloc(sizeof(char) * (ft_get_word_len(s, c, i) + 1));
 		if (!arr[i])
 		{
 			while (i >= 0)

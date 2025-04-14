@@ -6,7 +6,7 @@
 /*   By: juamanri <juamanri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 12:36:28 by juamanri          #+#    #+#             */
-/*   Updated: 2025/04/10 11:51:37 by juamanri         ###   ########.fr       */
+/*   Updated: 2025/04/14 13:12:36 by juamanri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,8 @@
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
-	char	*ptr;
 
 	i = 0;
-	ptr = (char *)s;
 	while (i < n)
-	{
-		ptr[i] = '\0';
-		i++;
-	}
+		((char *)s)[i++] = '\0';
 }

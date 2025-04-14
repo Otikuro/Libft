@@ -6,7 +6,7 @@
 /*   By: juamanri <juamanri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:28:02 by juamanri          #+#    #+#             */
-/*   Updated: 2025/04/12 18:08:19 by juamanri         ###   ########.fr       */
+/*   Updated: 2025/04/14 10:23:38 by juamanri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	end = ft_strlen(s1) - 1;
 	i = 0;
-	if (!s1)
+	if (!s1 || !set)
 		return (0);
 	while (s1[start] && !ft_is_valid(s1[start], set))
 		start++;
@@ -45,12 +45,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = (char *)malloc(sizeof(char) * ((end - start) + 2));
 	if (!str)
 		return (0);
-	while (start < (end + 1))
-	{
-		str[i] = s1[start];
-		i++;
-		start++;
-	}
-	str[start] = '\0';
+	ft_strlcpy(str, &s1[start], (end - start + 2));
 	return (str);
 }
