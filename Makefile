@@ -2,6 +2,8 @@
 COMPILER = cc
 #NAME The name of the executable that we want to create
 NAME = libft.a
+
+DEPS = libft.h
 #FILES The file sthat we want to compile
 FILES = ft_atoi.c \
 		ft_bzero.c \
@@ -46,17 +48,32 @@ FILES = ft_atoi.c \
 		ft_substr.c \
 		ft_tolower.c \
 		ft_toupper.c \
+
+BONUS_FILES =	ft_lstadd_back.c \
+				ft_lstadd_front.c \
+				ft_lstclear.c \
+				ft_lstdelone.c \
+				ft_lstiter.c \
+				ft_lstlast.c \
+				ft_lstlast.c \
+				ft_lstmap.c \
+				ft_lstnew.c \
+				ft_lstsize.c \
 #CFLAGS The flags we want to use
 FLAGS = -Wall -Werror -Wextra
 
 OBJS = $(FILES:.c=.o)
+BONUS_OBJS = $(BONUS_FILES:.c=.o);
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $@ $^
 
-%o: %.c
+bonus: $(NAME) $(BONUS_OBJS)
+	ar rcs $@ $^
+
+%o: %.c $(DEPS)
 	$(COMPILER) $(FLAGS) -c $< -o $@
 
 clean:

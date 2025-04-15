@@ -6,7 +6,7 @@
 /*   By: juamanri <juamanri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 15:13:54 by juamanri          #+#    #+#             */
-/*   Updated: 2025/04/14 12:48:56 by juamanri         ###   ########.fr       */
+/*   Updated: 2025/04/15 12:32:42 by juamanri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_get_num_of_words(char const *s, char c)
 	num_of_words = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] && s[i] == c)
 			new_word = 1;
 		else if (new_word == 1)
 		{
@@ -48,9 +48,9 @@ int	ft_get_word_len(char const *s, char c, int num_of_word)
 		i++;
 	while (current_word < num_of_word)
 	{
-		while (s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
-		while (s[i] != c)
+		while (s[i] && s[i] != c)
 			i++;
 		current_word++;
 	}
@@ -72,9 +72,9 @@ void	ft_fill_array(char const *s, char c, int num_of_words, char **arr)
 	while (current_word < num_of_words)
 	{
 		j = 0;
-		while (s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
-		while (s[i] != c)
+		while (s[i] && s[i] != c)
 		{
 			arr[current_word][j] = s[i];
 			i++;

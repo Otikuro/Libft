@@ -6,7 +6,7 @@
 /*   By: juamanri <juamanri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 13:33:26 by juamanri          #+#    #+#             */
-/*   Updated: 2025/04/14 13:34:50 by juamanri         ###   ########.fr       */
+/*   Updated: 2025/04/15 11:05:55 by juamanri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	
+	(*del)(lst->content);
+	free(lst);
 }
