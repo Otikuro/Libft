@@ -6,7 +6,7 @@
 /*   By: juamanri <juamanri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 13:20:57 by juamanri          #+#    #+#             */
-/*   Updated: 2025/04/15 12:14:14 by juamanri         ###   ########.fr       */
+/*   Updated: 2025/04/16 13:11:48 by juamanri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	arr1 = (const unsigned char *)s1;
 	arr2 = (const unsigned char *)s2;
-	while ((arr1[i] == arr2[i]) && (i < n))
+	while ((i < n) && (arr1[i] == arr2[i]))
 		i++;
 	if (i == n)
 		return (0);
