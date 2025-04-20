@@ -17,7 +17,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int		objective_len;
 	char				*str;
 
+	if (s == NULL)
+		return (NULL);
 	objective_len = ft_strlen(s);
+	if (start > objective_len)
+		return (ft_strdup(""));
 	if (len > (objective_len - start))
 		len = objective_len - start;
 	if (len < 1)
@@ -28,12 +32,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		str[0] = '\0';
 		return (str);
 	}
-	str = (char *)malloc(len + 1);
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 		return (NULL);
-	else if (start > objective_len)
-		ft_bzero(str, len);
-	else
-		ft_strlcpy(str, &s[start], len + 1);
+	ft_strlcpy(str, &s[start], len + 1);
 	return (str);
 }
