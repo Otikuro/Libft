@@ -6,7 +6,7 @@
 /*   By: juamanri <juamanri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 15:08:29 by juamanri          #+#    #+#             */
-/*   Updated: 2025/04/15 08:57:07 by juamanri         ###   ########.fr       */
+/*   Updated: 2025/04/21 09:42:06 by juamanri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	long	num;
-	int		digits;
 
 	num = n;
 	if (num < 0)

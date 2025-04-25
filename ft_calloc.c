@@ -6,7 +6,7 @@
 /*   By: juamanri <juamanri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 13:30:23 by juamanri          #+#    #+#             */
-/*   Updated: 2025/04/16 15:38:48 by juamanri         ###   ########.fr       */
+/*   Updated: 2025/04/21 15:29:57 by juamanri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	total_size;
 	void	*ptr;
 
-	if (nmemb == 0 || size == 0)
-		return (malloc(0));
 	total_size = nmemb * size;
-	if (total_size > 2147483647)
+	if (size != 0 && (total_size / size) != nmemb)
 		return (NULL);
 	ptr = malloc(total_size);
 	if (ptr == NULL)
