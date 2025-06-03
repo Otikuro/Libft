@@ -6,13 +6,13 @@
 /*   By: juamanri <juamanri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 10:24:24 by juamanri          #+#    #+#             */
-/*   Updated: 2025/04/09 13:38:22 by juamanri         ###   ########.fr       */
+/*   Updated: 2025/06/03 12:08:41 by juamanri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
 	return (c);
 }

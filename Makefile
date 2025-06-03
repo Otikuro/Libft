@@ -70,7 +70,7 @@ $(NAME): $(OBJS)
 	$(AR) $@ $^
 
 # Creates the default executable an adss the bonus fuctions to it
-bonus: $(NAME) $(BONUS_OBJS)
+bonus: $(BONUS_OBJS)
 	$(AR) $(NAME) $^
 
 # Compile the every .c in a .o with the compiler and flags that we define previously, 

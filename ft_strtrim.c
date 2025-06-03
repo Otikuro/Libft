@@ -6,7 +6,7 @@
 /*   By: juamanri <juamanri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:28:02 by juamanri          #+#    #+#             */
-/*   Updated: 2025/04/14 10:23:38 by juamanri         ###   ########.fr       */
+/*   Updated: 2025/06/03 12:11:13 by juamanri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*str;
 	int		start;
 	int		end;
-	int		i;
 
 	start = 0;
 	end = ft_strlen(s1) - 1;
-	i = 0;
 	if (!s1 || !set)
 		return (0);
 	while (s1[start] && !ft_is_valid(s1[start], set))
