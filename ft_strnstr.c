@@ -6,7 +6,7 @@
 /*   By: juamanri <juamanri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 12:44:09 by juamanri          #+#    #+#             */
-/*   Updated: 2025/04/16 17:09:11 by juamanri         ###   ########.fr       */
+/*   Updated: 2025/06/05 09:00:17 by juamanri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	size_t	haystack_len;
 	size_t	needle_len;
 
 	i = 0;
-	haystack_len = ft_strlen(big);
 	needle_len = ft_strlen(little);
-	if (len < 0)
-		len = haystack_len;
 	if (needle_len == 0)
 		return ((char *)big);
 	while (big[i] && (i < len))
